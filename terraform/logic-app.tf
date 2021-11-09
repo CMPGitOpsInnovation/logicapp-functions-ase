@@ -14,7 +14,7 @@ resource "azurerm_logic_app_standard" "default" {
     }
 
     app_settings = {
-        "WEBSITE_VNET_ROUTE_ALL" = "1"
-        "WEBSITE_CONTENTOVERVNET" = "1"
+        "WEBSITE_VNET_ROUTE_ALL"    = "1"
+        "WEBSITE_CONTENTOVERVNET"   = "1"
     }
 }
