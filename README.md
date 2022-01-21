@@ -1,6 +1,6 @@
-# Logic App App Service Environment v3
+# Azure Logic Apps and Azure Functions on ASEv3
 
-This repo creates a logic app with ASE v3
+This repo creates an Azure Logic App Standard and Azure Functions installation with ASE v3
 
 ## Required Policies
 
