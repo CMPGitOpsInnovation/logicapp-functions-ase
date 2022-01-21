@@ -1,6 +1,6 @@
 resource "azurerm_app_service_environment_v3" "default" {
     name                = "cmpgitopsasev3"
-    resource_group_name = azurerm_resource_group.default.name
+    resource_group_name = azurerm_resource_group.logicapps.name
     subnet_id           = data.azurerm_subnet.default.id
 
     internal_load_balancing_mode = "Web, Publishing"

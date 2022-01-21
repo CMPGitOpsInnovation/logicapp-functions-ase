@@ -14,8 +14,13 @@ provider "azurerm" {
   }
 }
 
-resource "azurerm_resource_group" "default" {
+resource "azurerm_resource_group" "logicapps" {
   name     = var.resource_group_name
+  location = var.location
+}
+
+resource "azurerm_resource_group" "functions" {
+  name     = var.functions_resource_group_name
   location = var.location
 }
 

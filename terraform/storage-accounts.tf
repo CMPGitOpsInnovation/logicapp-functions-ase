@@ -1,7 +1,7 @@
-resource "azurerm_storage_account" "default" {
+resource "azurerm_storage_account" "logicapps" {
   name                = "staspcmpgitops"
-  resource_group_name = azurerm_resource_group.default.name
-  location            = azurerm_resource_group.default.location
+  resource_group_name = azurerm_resource_group.logicapps.name
+  location            = azurerm_resource_group.logicapps.location
 
   account_tier             = "Standard"
   account_replication_type = "LRS"
@@ -13,10 +13,10 @@ resource "azurerm_storage_account" "default" {
   
 }
 
-resource "azurerm_storage_account" "backend" {
+resource "azurerm_storage_account" "target" {
   name                = "stbackcmpgitops"
-  resource_group_name = azurerm_resource_group.default.name
-  location            = azurerm_resource_group.default.location
+  resource_group_name = azurerm_resource_group.logicapps.name
+  location            = azurerm_resource_group.logicapps.location
 
   account_tier             = "Standard"
   account_replication_type = "LRS"
@@ -29,19 +29,17 @@ resource "azurerm_storage_account" "backend" {
   tags = {}
 }
 
-/*
-resource "azurerm_storage_account" "abbstg" {
-  name                = "abbstg001"
-  resource_group_name = "RG_Abbas"
-  location            = "EastUS"
+resource "azurerm_storage_account" "functions" {
+  name                = "staspcmpgitopsla"
+  resource_group_name = azurerm_resource_group.functions.name
+  location            = azurerm_resource_group.functions.location
 
-  min_tls_version          = "TLS1_2"
-  account_tier             = "Standard"  
+  account_tier             = "Standard"
   account_replication_type = "LRS"
 
   network_rules {
     default_action = "Deny"
     bypass = ["AzureServices"]
   }
+  
 }
-*/

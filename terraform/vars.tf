@@ -3,6 +3,12 @@ variable "resource_group_name" {
   default   = "rg-logicapp"
 }
 
+variable "functions_resource_group_name" {
+  type      = string
+  default   = "rg-functions"
+}
+
+
 variable "location" {
   type      = string
   default   = "EastUS"
